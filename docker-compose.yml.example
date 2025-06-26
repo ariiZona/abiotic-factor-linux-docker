@@ -1,6 +1,6 @@
 services:
   abiotic-server:
-  image: "ghcr.io/ariizona/abiotic-factor-linux-docker:latest"
+    image: "ghcr.io/ariizona/abiotic-factor-linux-docker:latest"
     restart: unless-stopped
     network_mode: host
     volumes:
