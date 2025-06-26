@@ -1,8 +1,6 @@
 services:
   abiotic-server:
-#   Might provide image later but for now run 'docker compose build'    
-    build: .
-#   image: "abiotic-factor-linux-docker"
+  image: "ghcr.io/ariizona/abiotic-factor-linux-docker:latest"
     restart: unless-stopped
     network_mode: host
     volumes:
