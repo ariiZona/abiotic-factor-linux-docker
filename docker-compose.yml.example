@@ -1,7 +1,10 @@
 services:
   abiotic-server:
-    image: "ghcr.io/pleut/abiotic-factor-linux-docker:latest"
+#   Might provide image later but for now run 'docker compose build'    
+    build: .
+#   image: "abiotic-factor-linux-docker"
     restart: unless-stopped
+    network_mode: host
     volumes:
       - "./gamefiles:/server"
       - "./data:/server/AbioticFactor/Saved"
@@ -10,12 +13,16 @@ services:
       - Port=7777
       - QueryPort=27015
       - ServerPassword=password
-      - SteamServerName=Linux Server
+      - SteamServerName=LinuxServer
       - UsePerfThreads=true
       - NoAsyncLoadingThread=true
       - WorldSaveName=Cascade
 #     - AutoUpdate=true
-#     - AdditionalArgs=-SandboxIniPath=Config/WindowsServer/Server1Sandbox.ini
+      - AdditionalArgs=-SandboxIniPath=Config/WindowsServer/Server1Sandbox.ini
+#     - DeleteGamefilesEachBoot=false
     ports:
       - "0.0.0.0:7777:7777/udp"
       - "0.0.0.0:27015:27015/udp"
+#     Uncomment below if still can't connect
+#     - "0.0.0.0:7777:7777/tcp"
+#     - "0.0.0.0:27015:27015/tcp"
