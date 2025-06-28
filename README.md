@@ -3,7 +3,7 @@ This is a dirty fix for those who could never connect to their server with the o
 - Docker network is set in `host` mode
 - Has an option to remove the game files each time you start the container
 
-*Run `docker compose build` before first start.* Setup is the same as usual.
+Setup is the same as usual.
 
 # Abiotic Factor Linux Docker
 For operating a dedicated server in Docker in order to use it under Linux.
